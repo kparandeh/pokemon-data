@@ -12,7 +12,7 @@ def fetch_pokemon_data(pokemon_name):
         return None
 
 
-# test
+# Test the fetch data function
 if __name__ == "__main__":
     pikachu_data = fetch_pokemon_data("pikachu")
     print(pikachu_data)
