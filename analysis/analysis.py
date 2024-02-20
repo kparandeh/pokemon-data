@@ -1,4 +1,25 @@
 import requests
+import yaml
+
+def load_config(config_path):
+    with open(config_path, 'r') as file:
+        return yaml.safe_load(file)
+
+# Load configurations at the start
+system_config = load_config('configs/system_config.yml')
+user_config = load_config('configs/user_config.yml')
+api_base_url = system_config.get('api_base_url', 'default_url')
+
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+logger.error(f"Error fetching data for {pokemon_name}: {e}")
+
+except requests.exceptions.RequestException as e:
+    logger.exception(f"Error fetching data for {pokemon_name}")
+    return None
 
 def fetch_pokemon_data(pokemon_name):
     """Fetch details for a specific Pokemon"""

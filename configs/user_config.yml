@@ -1,0 +1,4 @@
+favorite_pokemon: "bulbasaur"
+notification_settings:
+  enable_notifications: true
+  notify_email: "user@email.com"
