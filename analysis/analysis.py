@@ -14,12 +14,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
-
 logger.error(f"Error fetching data for {pokemon_name}: {e}")
-
-except requests.exceptions.RequestException as e:
-    logger.exception(f"Error fetching data for {pokemon_name}")
-    return None
 
 def fetch_pokemon_data(pokemon_name):
     """Fetch details for a specific Pokemon"""
